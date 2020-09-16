@@ -35,7 +35,60 @@ int main(){
 ## 练习 6.4
 ```
 #include<iostream>
+using namespace std;
 int fact(int i){
-    
+    if(i == 1 || i == 0 ){
+        return 1;
+    }
+    return i*fact(i-1);
+}
+int main(){
+    while(true){
+        int num = 0;
+        cout<<"please input a num:"<<endl;
+        cin >> num;
+        if(num<0){
+            cout<<endl<<"illeagel num!"<<endl;
+            continue;
+        }
+        cout<<fact(num)<<endl;
+    }
 }
 ```
+## 练习 6.5
+```
+#include <iostream>
+using namespace std;
+int abs(int i)
+{
+    return i > 0 ? i : -i;
+}
+
+int main()
+{
+    std::cout << abs(-6) << std::endl;
+    return 0;
+}
+```
+## 练习 6.6
+形参：在参数列表中定义，生命周期与函数相同  
+局部变量：在函数内部定义，生命周期与函数相同(如果未主动释放)  
+局部静态变量：在函数内部定义，生命周期从初始化开始，到程序结束  
+```
+int func(int n){
+    int n1=0;
+    static int n2=0;
+}
+```
+## 练习 6.7
+```
+int func(){
+    static int n=-1;
+    return ++n;
+}
+```
+## [练习 6.8](Chapter6.h)
+## 练习 6.9
+[fact.cc](fact.cc)  
+[factMain.cc](factMain.cc)  
+## 练习 6.10
